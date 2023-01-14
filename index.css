@@ -11,12 +11,6 @@ body{
     background-color: black;
 }
 
-aside{
-    grid-area: right;
-}
-li, h4{
-    color: white;
-}
 nav{
     position: absolute;
     top: 0;
@@ -28,9 +22,22 @@ nav{
     width: 100%;
     min-width: 1024px;
     height: 50px;
-    background: darkgreen;
+    background: green;
     font-size: 17px;
     color: white;
+}
+
+aside{
+    grid-area: right;
+    background-color: #AAAAAA;
+}
+
+li, h4{
+    color: black;
+}
+
+h4{
+    margin-left: 15px;
 }
 
 ul{
@@ -40,6 +47,62 @@ ul{
 
 }
 
+.searchGame__txt{
+    display: inline-block;
+    padding: 0.1em 1em;
+    border-radius: 0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+    text-align: center;
+    position: relative;
+}
+
+.searchGame__submit{
+    display: inline-block;
+    padding: 0.1em 1em;
+    margin: 0 0.25em 1em 0.5em;
+    border-radius: 0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #3369ff;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+    text-align: center;
+    position: relative;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.searchGame__submit:active {
+    top: 0.1em;
+}
+
+.searchGame__button{
+    display: inline-block;
+    padding: 0.1em 1em;
+    margin: 0 0.25em 0.3em 0;
+    border-radius: 0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #3369ff;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+    text-align: center;
+    position: relative;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.searchGame__button:active {
+    top: 0.1em;
+}
+
 header{
     grid-area: header;
     height: 100px;
@@ -47,10 +110,13 @@ header{
     text-align: center;
     background-color: black;
 }
+
 h2{
-    color: white;
+    color: black;
     padding: 10px 0px 0px;
+    text-shadow: -1px 0 green, 0 1px green, 1px 0 green, 0 -1px green;
 }
+
 main{
     display: grid;
     grid-auto-rows: 206px; 
@@ -71,13 +137,7 @@ article{
 article:hover{
     border-radius: 50px;
     transform: scale(1.15);
+    box-shadow: 0 4px 8px 0 white, 0 6px 20px 0 white;
+
 }
 
-/* .searchGame{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-
-.searchGame__txt, .searchGame__submit, .searchGame__button{
-    grid-column: 3 / span 1;
-} */
