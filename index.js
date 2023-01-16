@@ -58,8 +58,16 @@ logo.addEventListener("click", () => {
     location.replace("index.html");
 })
 
-if(localStorage > 0){
-    for (let i=0; i<localStorage.length; i++){
-        
+if(localStorage.length > 0){
+    let listOfFavGames = localStorage.getItem("string").split(",")
+    for (let i=0; i<listOfFavGames.length; i++){
+        // const a = document.createElement("a")
+        const li = document.createElement("li");
+        const ul = document.querySelector("aside ul");
+        // li.append(a)
+        ul.append(li)
+        li.innerHTML = listOfFavGames[i]
+        // a.setAttribute("href", ) = listOfFavGames[i]
     }
 }
+

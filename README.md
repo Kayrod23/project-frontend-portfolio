@@ -115,3 +115,7 @@ Store some information locally through localStorage. This information should aff
 Use a CSS framework such as Simple.css or Bootstrap.
 Split your CSS or JavaScript into multiple files, with each file relating to a specific functionality. For example, create a new file called api.js that includes the JavaScript code that makes requests to your external API.
 Getting started
+
+
+for local storage
+https://stackoverflow.com/questions/16083919/push-json-objects-to-array-in-localstorage

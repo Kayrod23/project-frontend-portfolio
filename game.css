@@ -2,11 +2,17 @@ body {
     margin-top: 50px;
     gap: 10px;
     padding: 10px;
-    background-color: black;
+    background-image: url("wp2815605-black-texture-wallpapers.jpg");
+    background-size: cover;
 }
 
-li {
-    color: white;
+nav ul li:hover {
+    transform: scale(1.10);
+}
+
+nav ul li {
+    color: whitesmoke;
+    text-decoration: underline;
 }
 
 nav {
@@ -20,7 +26,7 @@ nav {
     width: 100%;
     min-width: 1024px;
     height: 50px;
-    background: green;
+    background-image: url(desktop-wallpaper-green-gold-malachite-texture-green-gold.jpg);
     font-size: 17px;
     color: white;
 }
@@ -33,11 +39,10 @@ img:hover {
     transform: scale(1.15);
 }
 
-ul {
+nav ul {
     display: grid;
     list-style: none;
-    grid-template-columns: 50px 50px 50px;
-
+    grid-template-columns: 50px 85px 150px;
 }
 
 main {
@@ -63,7 +68,7 @@ section {
     /* margin: 10px ; */
     font-size: large;
     padding: 10px 0px 20px 25px;
-    background-color: #AAAAAA;
+    background-image: url(desktop-wallpaper-white-ivory-paper-texture-backgrounds-white-phone.jpg);
     grid-column: 2 / span 1;
     font-style: italic;
     text-shadow: 2px 2px 4px #000000;
@@ -84,9 +89,17 @@ section p, section a {
     border-radius: 2px;
     display: inline;
     font-weight: 100;
-    color: black;
     font-style: normal;
     text-shadow: 2px 2px 7px black;
+}
+
+a{
+    color: #3369ff;
+    transition: 0.07s;
+}
+
+a:hover{
+    transform: scale(1.10);
 }
 
 button {

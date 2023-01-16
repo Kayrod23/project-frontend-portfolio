@@ -7,6 +7,7 @@ const options = {
     }
 };
 
+let buttonUpdater = false
 const innerP = document.querySelectorAll("p");
 const a = document.querySelector("a")
 const button = document.querySelector("button")
@@ -31,7 +32,7 @@ function getGameInfo(results) {
     for (let i = 0; i < innerP.length + 1; i++) {
         for (let k = 0; k < results.length; k++) {
             if (i === 0 && results[k].thumbnail === article.style.background.slice(5, 51) || i === 0 && results[k].thumbnail === article.style.background.slice(5, 50) || i === 0 && results[k].thumbnail === article.style.background.slice(5, 49)) {
-                innerP[i].innerHTML = results[k].title
+                innerP[i].innerText = results[k].title
             } else if (i === 1 && results[k].title === innerP[0].innerHTML) {
                 innerP[i].innerHTML = results[k].short_description
             } else if (i === 2 && results[k].title === innerP[0].innerHTML) {
@@ -47,18 +48,28 @@ function getGameInfo(results) {
             } else if (i === 7 && results[k].title === innerP[0].innerHTML) {
                 a.setAttribute("href", results[k].game_url)
             }
+            if (localStorage.length > 0) {
+                let listOfFavGames = localStorage.getItem("string").split(",")
+                if (listOfFavGames.includes(innerP[0].innerText)) {
+                    button.innerText = "All Ready Favorited"
+                    buttonUpdater = true
+                }
+            }
         }
     }
+    buttonListener()
 }
 
-
+function buttonListener() {
+    let favoriteGames = ""
+    if (!buttonUpdater) {
 button.addEventListener("click", () => {
-    let favoriteGames = []
-
-    //favoriteGames.push(innerP[0].innerHTML)
-    localStorage.setItem("arr", JSON.stringify(favoriteGames))
-
+    favoriteGames = innerP[0].innerHTML
+    if (localStorage.length > 0) {
+        favoriteGames += "," + localStorage.getItem("string");
+    }
+    localStorage.setItem("string", favoriteGames);
     location.replace("index.html");
-})
-
-
+});
+    }
+}

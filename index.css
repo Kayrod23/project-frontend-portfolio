@@ -9,6 +9,8 @@ body{
     gap: 10px;
     padding: 10px;
     background-color: black;
+    background-image: url("wp2815605-black-texture-wallpapers.jpg");
+    background-size: cover;
 }
 
 nav{
@@ -22,29 +24,35 @@ nav{
     width: 100%;
     min-width: 1024px;
     height: 50px;
-    background: green;
+    background-image: url("desktop-wallpaper-green-gold-malachite-texture-green-gold.jpg");
     font-size: 17px;
     color: white;
 }
 
 aside{
     grid-area: right;
-    background-color: #AAAAAA;
+    background-image: url(desktop-wallpaper-white-ivory-paper-texture-backgrounds-white-phone.jpg);
+    text-shadow: 2px 2px 5px #000000;
+    border-radius: 10px;
 }
 
-li, h4{
-    color: black;
+nav ul li:hover {
+    transform: scale(1.10);
+}
+
+nav ul li {
+    color: whitesmoke;
+    text-decoration: underline;
 }
 
 h4{
     margin-left: 15px;
 }
 
-ul{
+nav ul {
     display: grid;
     list-style: none;
-    grid-template-columns: 50px 50px 50px;
-
+    grid-template-columns: 50px 85px 150px;
 }
 
 .searchGame__txt{
@@ -89,7 +97,6 @@ ul{
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
     font-weight: 400;
     color: #FFFFFF;
     background-color: #3369ff;
@@ -108,13 +115,20 @@ header{
     height: 100px;
     padding: 10px 0px;
     text-align: center;
-    background-color: black;
 }
 
 h2{
-    color: black;
-    padding: 10px 0px 0px;
-    text-shadow: -1px 0 green, 0 1px green, 1px 0 green, 0 -1px green;
+    background-image: url(desktop-wallpaper-white-ivory-paper-texture-backgrounds-white-phone.jpg);
+        background-repeat: cover;
+        background-size: clip;
+        color: transparent;
+        -webkit-background-clip: text;
+        text-align: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: 'Steelfish Rg', 'helvetica neue',
+            helvetica, arial, sans-serif;
+        padding: 10px 0px 0px;
 }
 
 main{
@@ -136,8 +150,7 @@ article{
 
 article:hover{
     border-radius: 50px;
-    transform: scale(1.15);
+    transform: scale(1.10);
     box-shadow: 0 4px 8px 0 white, 0 6px 20px 0 white;
-
 }
 
