@@ -40,6 +40,7 @@ function createRecentGames(results){
 }
 
 function getGamesBySearch(results, userInput){ // finds games based on userinput and turns it into an article
+    let searchUpdater = false;
     for(const result of results){
       if(result.title.toLowerCase().includes(userInput.toLowerCase()) || result.genre.toLowerCase().includes(userInput.toLowerCase())) {
         const article = document.createElement("article");
@@ -48,9 +49,11 @@ function getGamesBySearch(results, userInput){ // finds games based on userinput
             sessionStorage.setItem("articleClicked", event.target.style.backgroundImage);
             location.replace("Game.html");
         })
+        searchUpdater = true;
         main.append(article);
       }
     }   
+    searchFail(searchUpdater);
 }
 
 const logo = document.querySelector("img");
@@ -71,3 +74,11 @@ if(localStorage.length > 0){
     }
 }
 
+const h1 = document.createElement("h1");
+function searchFail(searchUpdater){
+    if(!searchUpdater){
+        console.log("404 🥲 Nothing Here")
+        h1.innerHTML = "404 🥲 Nothing Here"
+        main.append(h1)
+    }
+}

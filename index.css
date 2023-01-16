@@ -1,6 +1,33 @@
-body{
+@media screen and (min-width: 320px) {
+    main {
+        grid-template-columns: 365px;
+    }
+
+    aside {
+        display: hidden;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    main{
+        grid-template-columns: 365px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    main{
+        grid-template-columns: 365px 365px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    main{
+        grid-template-columns: 365px 365px 365px;
+    }
+  }
+
+body {
     display: grid;
-    background-size: cover;
     height: 100%;
     grid-template-areas:
         'header header header header'
@@ -10,10 +37,9 @@ body{
     padding: 10px;
     background-color: black;
     background-image: url("wp2815605-black-texture-wallpapers.jpg");
-    background-size: cover;
 }
 
-nav{
+nav {
     position: absolute;
     top: 0;
     right: 0;
@@ -29,7 +55,7 @@ nav{
     color: white;
 }
 
-aside{
+aside {
     grid-area: right;
     background-image: url(desktop-wallpaper-white-ivory-paper-texture-backgrounds-white-phone.jpg);
     text-shadow: 2px 2px 5px #000000;
@@ -45,7 +71,7 @@ nav ul li {
     text-decoration: underline;
 }
 
-h4{
+h4 {
     margin-left: 15px;
 }
 
@@ -55,7 +81,7 @@ nav ul {
     grid-template-columns: 50px 85px 150px;
 }
 
-.searchGame__txt{
+.searchGame__txt {
     display: inline-block;
     padding: 0.1em 1em;
     border-radius: 0.15em;
@@ -68,7 +94,7 @@ nav ul {
     position: relative;
 }
 
-.searchGame__submit{
+.searchGame__submit {
     display: inline-block;
     padding: 0.1em 1em;
     margin: 0 0.25em 1em 0.5em;
@@ -89,7 +115,7 @@ nav ul {
     top: 0.1em;
 }
 
-.searchGame__button{
+.searchGame__button {
     display: inline-block;
     padding: 0.1em 1em;
     margin: 0 0.25em 0.3em 0;
@@ -110,14 +136,20 @@ nav ul {
     top: 0.1em;
 }
 
-header{
+header {
     grid-area: header;
     height: 100px;
     padding: 10px 0px;
     text-align: center;
 }
 
-h2{
+h1 {
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+
+h2 {
     background-image: url(desktop-wallpaper-white-ivory-paper-texture-backgrounds-white-phone.jpg);
         background-repeat: cover;
         background-size: clip;
@@ -131,15 +163,14 @@ h2{
         padding: 10px 0px 0px;
 }
 
-main{
+main {
     display: grid;
     grid-auto-rows: 206px; 
-    grid-template-columns: 365px 365px 365px;
     height: 100%;
     gap: 15px;
 }
 
-article{
+article {
    border-radius: 10px;
    background-size: cover;
    min-height: 100%;
@@ -148,9 +179,8 @@ article{
    transition: 0.07s;
 }
 
-article:hover{
+article:hover {
     border-radius: 50px;
     transform: scale(1.10);
     box-shadow: 0 4px 8px 0 white, 0 6px 20px 0 white;
 }
-
