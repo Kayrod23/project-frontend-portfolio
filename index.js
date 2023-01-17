@@ -15,12 +15,12 @@ const options = {
 fetch(BASE_URL, options) // calls a fetch on website load to show images of games
 	.then(response => response.json())
 	.then((results) => {
-        createRecentGames(results);
-        form.addEventListener("submit", (event) => {
+        createStartingGames(results);
+        form.addEventListener("submit", (event) => { // 
             event.preventDefault();
-            const articles2 =  document.querySelectorAll("article");
-            for (let i=0; i<articles2.length; i++){ // removes articles on load
-                articles2[i].style.display = "none";
+            const removeArticles =  document.querySelectorAll("article");
+            for (let i=0; i<removeArticles.length; i++){ // removes articles on search
+                removeArticles[i].style.display = "none";
             }
             const userInput = document.querySelector("input").value;
             getGamesBySearch(results, userInput);
@@ -29,7 +29,7 @@ fetch(BASE_URL, options) // calls a fetch on website load to show images of game
     })
 	.catch(err => console.error(err));
 
-function createRecentGames(results){
+function createStartingGames(results){ // 
     for (let i=0; i<articles.length; i++){
         articles[i].style.backgroundImage = "url("+results[i].thumbnail+")";
         articles[i].addEventListener("click", (event) => {
@@ -56,29 +56,31 @@ function getGamesBySearch(results, userInput){ // finds games based on userinput
     searchFail(searchUpdater);
 }
 
-const logo = document.querySelector("img");
+const logo = document.querySelector("img"); // When logo is clicked it takes you index.html
 logo.addEventListener("click", () => {
     location.replace("index.html");
 })
 
-if(localStorage.length > 0){
+if(localStorage.length > 0){ // Creates a list of the games you have favorited
     let listOfFavGames = localStorage.getItem("string").split(",")
     for (let i=0; i<listOfFavGames.length; i++){
-        // const a = document.createElement("a")
         const li = document.createElement("li");
         const ul = document.querySelector("aside ul");
-        // li.append(a)
         ul.append(li)
         li.innerHTML = listOfFavGames[i]
-        // a.setAttribute("href", ) = listOfFavGames[i]
     }
 }
 
 const h1 = document.createElement("h1");
-function searchFail(searchUpdater){
+function searchFail(searchUpdater){ // Checks if the searchUpadter was updated and runs an error message to the screen
     if(!searchUpdater){
         console.log("404 🥲 Nothing Here")
         h1.innerHTML = "404 🥲 Nothing Here"
         main.append(h1)
     }
 }
+
+const aboutThisProject = document.querySelector(".info")
+aboutThisProject.addEventListener("click", () => {
+    location.replace("aboutThisProject.html")
+})

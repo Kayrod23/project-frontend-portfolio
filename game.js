@@ -20,7 +20,8 @@ fetch(BASE_URL, options) // calls a fetch on website load to show images of game
     .catch(err => console.error(err));
 
 let clickedArticle = sessionStorage.getItem("articleClicked");
-const logo = document.querySelector("img");
+
+const logo = document.querySelector("img"); // When logo is clicked it takes you index.html
 logo.addEventListener("click", () => {
     location.replace("index.html");
 })
@@ -28,7 +29,7 @@ logo.addEventListener("click", () => {
 const article = document.querySelector("article");
 article.style.background = clickedArticle;
 
-function getGameInfo(results) {
+function getGameInfo(results) { // gets info from the article clicked and matches with the array of games to find where it was from. Also updates all info corresponding to the game
     for (let i = 0; i < innerP.length + 1; i++) {
         for (let k = 0; k < results.length; k++) {
             if (i === 0 && results[k].thumbnail === article.style.background.slice(5, 51) || i === 0 && results[k].thumbnail === article.style.background.slice(5, 50) || i === 0 && results[k].thumbnail === article.style.background.slice(5, 49)) {
@@ -60,7 +61,7 @@ function getGameInfo(results) {
     buttonListener()
 }
 
-function buttonListener() {
+function buttonListener() { // checks if you have already favorited the game and doesn't let you click the button
     let favoriteGames = ""
     if (!buttonUpdater) {
 button.addEventListener("click", () => {
@@ -73,3 +74,8 @@ button.addEventListener("click", () => {
 });
     }
 }
+
+const aboutThisProject = document.querySelector(".info")
+aboutThisProject.addEventListener("click", () => {
+    location.replace("aboutThisProject.html")
+})
