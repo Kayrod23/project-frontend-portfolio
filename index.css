@@ -1,22 +1,24 @@
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 480px){
     main {
-        grid-template-columns: 365px;
+        grid-template-columns: 330px;
     }
-
     aside {
-        display: hidden;
-    }
+        grid-row: 2;
+    } 
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
     main{
         grid-template-columns: 365px;
     }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 769px) and (max-width: 1024px){
     main{
         grid-template-columns: 365px 365px;
+    }
+    aside {
+        max-height: 500px;
     }
 }
 
@@ -24,7 +26,7 @@
     main{
         grid-template-columns: 365px 365px 365px;
     }
-  }
+}
 
 body {
     display: grid;
@@ -35,7 +37,6 @@ body {
         'footer footer footer footer';
     gap: 10px;
     padding: 10px;
-    background-color: black;
     background-image: url("wp2815605-black-texture-wallpapers.jpg");
 }
 
@@ -44,11 +45,9 @@ nav {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 9999;
     display: block;
     margin: 0;
     width: 100%;
-    min-width: 1024px;
     height: 50px;
     background-image: url("desktop-wallpaper-green-gold-malachite-texture-green-gold.jpg");
     font-size: 17px;
@@ -56,7 +55,6 @@ nav {
 }
 
 aside {
-    grid-area: right;
     background-image: url(desktop-wallpaper-white-ivory-paper-texture-backgrounds-white-phone.jpg);
     text-shadow: 2px 2px 5px #000000;
     border-radius: 10px;
@@ -78,62 +76,32 @@ h4 {
 nav ul {
     display: grid;
     list-style: none;
-    grid-template-columns: 50px 85px 150px;
+    grid-template-columns: 50px 150px;
+}
+
+.searchGame__txt, .searchGame__submit {
+    padding: 0.1em 1em;
+    border-radius: 0.15em;
+    font-family: 'Roboto', sans-serif;
 }
 
 .searchGame__txt {
-    display: inline-block;
-    padding: 0.1em 1em;
-    border-radius: 0.15em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
     box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
     text-align: center;
-    position: relative;
+    /* position: relative; */
 }
 
 .searchGame__submit {
-    display: inline-block;
-    padding: 0.1em 1em;
-    margin: 0 0.25em 1em 0.5em;
-    border-radius: 0.15em;
-    box-sizing: border-box;
-    text-decoration: none;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
     color: #FFFFFF;
     background-color: #3369ff;
     box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
-    text-align: center;
-    position: relative;
     text-shadow: 2px 2px 4px #000000;
 }
 
-.searchGame__submit:active {
+.searchGame__submit:active{
     top: 0.1em;
-}
-
-.searchGame__button {
-    display: inline-block;
-    padding: 0.1em 1em;
-    margin: 0 0.25em 0.3em 0;
-    border-radius: 0.15em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    color: #FFFFFF;
-    background-color: #3369ff;
-    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
-    text-align: center;
-    position: relative;
-    text-shadow: 2px 2px 4px #000000;
-}
-
-.searchGame__button:active {
-    top: 0.1em;
+    background-color: blue;
 }
 
 header {
@@ -143,24 +111,25 @@ header {
     text-align: center;
 }
 
+h1, h2 {
+    background-image: url(white-paper-wrinkled-texture-background-white-paper-wrinkled-texture-background-white-crumpled-paper-texture-background-137375365.jpg);
+}
+
 h1 {
-    color: white;
     text-align: center;
     font-size: xx-large;
 }
 
 h2 {
-    background-image: url(desktop-wallpaper-white-ivory-paper-texture-backgrounds-white-phone.jpg);
-        background-repeat: cover;
-        background-size: clip;
-        color: transparent;
-        -webkit-background-clip: text;
-        text-align: center;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: 'Steelfish Rg', 'helvetica neue',
-            helvetica, arial, sans-serif;
-        padding: 10px 0px 0px;
+    background-repeat: cover;
+    background-size: clip;
+    color: transparent;
+    -webkit-background-clip: text;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Steelfish Rg', 'helvetica neue', helvetica, arial, sans-serif;
+    padding: 10px 0px 0px;
 }
 
 main {
@@ -173,8 +142,6 @@ main {
 article {
    border-radius: 10px;
    background-size: cover;
-   min-height: 100%;
-   min-width: 100%;
    background-repeat: no-repeat;
    transition: 0.07s;
 }
