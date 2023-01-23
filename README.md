@@ -12,6 +12,10 @@ I had to used a sepcial [link](https://rapidapi.com/digiwalls/api/free-to-play-g
 
 [My Website](https://monumental-blini-34eac6.netlify.app) while not the prettiest I am proud of its basic function
 
+[This is the link to my zoom recording](https://us06web.zoom.us/rec/share/ucfAhw_AbJLcL2mJoPbj3yU_Z-hqcROYQ2wjaOeJLX1HRxqwd4Np-L85O4t3Jw4h.bCmzc9zm_6m1u4Zl)
 
+Passcode: e+7j#cFu
+
+In the video I forgot to say that I coded the button to work only if the game isn't already favorited.
 
 
